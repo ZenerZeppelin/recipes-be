@@ -4,7 +4,10 @@ import { response } from "../../util"
 
 export const signup = async (req, res, next) => {
     try {
-        const { password } = req.body;
+        const { email, password, role } = req.body;
+
+        if (!email || !password || !role)
+            return res.status(200).json(response(false, "Required fields not provided."));
 
         const hashedPass = await bcrypt.hash(password, 12);
         if (!hashedPass) {
