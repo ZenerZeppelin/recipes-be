@@ -8,7 +8,7 @@ export const signup = async (req, res, next) => {
 
         const hashedPass = await bcrypt.hash(password, 12);
         if (!hashedPass) {
-            throw new Error("Error.");
+            return res.status(500).json(response(false, "Error while registrating."));
         }
 
         const user = new User({
@@ -18,8 +18,8 @@ export const signup = async (req, res, next) => {
         });
 
         await user.save();
-        return res.status(201).json({ "message": "User signed up successfully" });
+        return res.status(201).json(response(true, "User signed up successfully"));
     } catch (error) {
-        res.status(500).json(response(false, "Error while registrating."))
+        return res.status(500).json(response(false, "Error while registrating."))
     }
 };
