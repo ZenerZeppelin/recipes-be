@@ -1,11 +1,13 @@
 import express from "express";
 import { addRecipe, deleteRecipe, editRecipe, getRecipe, getRecipes } from "../controllers/recipe";
 
+import { isLogged } from "../middlewares"
+
 const router = express.Router();
 
-router.post("/addRecipe", addRecipe);
-router.delete("/deleteRecipe", deleteRecipe);
-router.put("/editRecipe", editRecipe);
+router.post("/addRecipe", isLogged, addRecipe);
+router.delete("/deleteRecipe/:idRecipe", isLogged, deleteRecipe);
+router.put("/editRecipe/:idRecipe", isLogged, editRecipe);
 router.get("/getRecipe/:idRecipe", getRecipe);
 router.get("/getRecipes", getRecipes);
 

@@ -2,15 +2,28 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
-    name: String,
-    description: String,
-    ingredients: String,
-    measure: Number,
+    name: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    ingredients: {
+        type: String,
+        required: true
+    },
     category: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref: "Category"
     },
     image: String,
-    video: String
+    video: String,
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }
 });
 
 export default mongoose.model("Recipe", recipeSchema);
