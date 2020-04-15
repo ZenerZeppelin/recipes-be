@@ -12,4 +12,6 @@ Libraries/Technologies used:
 Collections in mongodb database:  
 -users  
 -recipes  
--categories
+-categories  
+
+There are also configuration files for dockerizing the application.
