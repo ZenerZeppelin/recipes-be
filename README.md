@@ -5,7 +5,7 @@ Application allows users to read recipes. Authenticated users can add, edit or d
 Recipes are organized by categories.  Admins can add, edit or delete categories.
 
 Libraries/Technologies used:  
--babel compiler for using javaScript newer generation
+-babel compiler for using javaScript newer generation  
 -express.js web framework  
 -mongoose.js for communicating with database  
 -jsonwebtoken.js for authenticating users  
