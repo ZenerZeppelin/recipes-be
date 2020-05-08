@@ -10,6 +10,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
+app.use("/uploads", express.static("uploads"));
 
 app.use("/user", userRoute);
 app.use("/category", categoryRoute);

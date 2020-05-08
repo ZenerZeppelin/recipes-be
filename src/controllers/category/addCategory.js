@@ -10,7 +10,8 @@ export const addCategory = async (req, res, next) => {
         }
 
         const category = new Category({
-            ...req.body
+            ...req.body,
+            image: req.file.path
         });
 
 

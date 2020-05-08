@@ -10,7 +10,8 @@ export const addRecipe = async (req, res, next) => {
 
         const recipe = new Recipe({
             ...req.body,
-            author: req.token.id
+            author: req.token.id,
+            image: req.file.path
         });
 
         await recipe.save();
