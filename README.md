@@ -10,6 +10,7 @@ Libraries/Technologies used:
 -mongoose.js for communicating with database  
 -jsonwebtoken.js for authenticating users  
 -bcrypt.js for hashing users' passwords  
+-multer for uploading files (images of recipes and categories)
 
 Collections in mongodb database:  
 -users  
